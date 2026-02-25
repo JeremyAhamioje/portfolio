@@ -1,13 +1,6 @@
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 
-const ROTATING_TEXT: string[] = [
-  "Designing mechanisms",
-  "Engineering motion",
-  "Building proof of competence",
-  "Creating mechanical solutions",
-];
-
 const MARQUEE_TEXT =
   "MECHANICAL ENGINEER · CAD DESIGN · SOLIDWORKS · MOTION STUDY · TECHNICAL DRAWINGS · ASSEMBLY · GD&T · ";
 
