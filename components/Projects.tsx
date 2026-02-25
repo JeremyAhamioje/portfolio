@@ -130,7 +130,7 @@ function Lightbox({ images, startIdx, onClose }: LightboxProps) {
       >
         <button
           onClick={onClose}
-          className=" absolute -top-12 right-0 text-white/40 hover:text-white transition-colors text-2xl font-light"
+          className= "btn-hero absolute -top-12 right-0 text-white/40 hover:text-white transition-colors text-2xl font-light"
         >
           ✕ close
         </button>
@@ -145,7 +145,7 @@ function Lightbox({ images, startIdx, onClose }: LightboxProps) {
         <div className="flex items-center justify-between mt-5">
           <button
             onClick={() => setIdx((i) => (i - 1 + images.length) % images.length)}
-            className=" font-condensed text-white/40 hover:text-white text-sm uppercase tracking-widest transition-colors"
+            className=" btn-herofont-condensed text-white/40 hover:text-white text-sm uppercase tracking-widest transition-colors"
           >
             ← Prev
           </button>
@@ -154,7 +154,7 @@ function Lightbox({ images, startIdx, onClose }: LightboxProps) {
           </span>
           <button
             onClick={() => setIdx((i) => (i + 1) % images.length)}
-            className="font-condensed text-white/40 hover:text-white text-sm uppercase tracking-widest transition-colors"
+            className="btn-herofont-condensed text-white/40 hover:text-white text-sm uppercase tracking-widest transition-colors"
           >
             Next →
           </button>
