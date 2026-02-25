@@ -1,0 +1,366 @@
+@import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@custom-variant dark (&:is(.dark *));
+
+:root {
+  --font-size: 16px;
+  
+  /* Mid-Century Retro Color Palette */
+  --background: #F7F4F0;
+  --foreground: #2C1810;
+  --card: #FFFFFF;
+  --card-foreground: #2C1810;
+  --popover: #FFFFFF;
+  --popover-foreground: #2C1810;
+  --primary: #8B4513;
+  --primary-foreground: #F7F4F0;
+  --secondary: #D2B48C;
+  --secondary-foreground: #2C1810;
+  --muted: #E6DDD4;
+  --muted-foreground: #6B5B4F;
+  --accent: #CD853F;
+  --accent-foreground: #2C1810;
+  --destructive: #B22222;
+  --destructive-foreground: #FFFFFF;
+  --border: rgba(44, 24, 16, 0.15);
+  --input: transparent;
+  --input-background: #F0EBE5;
+  --switch-background: #D2B48C;
+  --font-weight-medium: 500;
+  --font-weight-normal: 400;
+  --ring: #8B4513;
+  
+  /* Custom Retro Design Tokens */
+  --wood-light: #DEB887;
+  --wood-primary: #D2B48C;
+  --wood-medium: #CD853F;
+  --wood-dark: #8B4513;
+  --wood-darker: #654321;
+  
+  --cream: #F5F5DC;
+  --warm-white: #FDF6E3;
+  --brass: #B8860B;
+  --brass-dark: #9A7209;
+  --vinyl-black: #1C1C1C;
+  --vinyl-label: #DC143C;
+  
+  /* Shadows and Effects */
+  --shadow-soft: 0 4px 20px rgba(139, 69, 19, 0.1);
+  --shadow-medium: 0 8px 30px rgba(139, 69, 19, 0.15);
+  --shadow-strong: 0 15px 50px rgba(139, 69, 19, 0.2);
+  --shadow-vinyl: 0 8px 25px rgba(28, 28, 28, 0.3);
+  
+  --chart-1: #8B4513;
+  --chart-2: #CD853F;
+  --chart-3: #D2B48C;
+  --chart-4: #B8860B;
+  --chart-5: #DEB887;
+  --radius: 0.75rem;
+  --sidebar: #F7F4F0;
+  --sidebar-foreground: #2C1810;
+  --sidebar-primary: #8B4513;
+  --sidebar-primary-foreground: #F7F4F0;
+  --sidebar-accent: #E6DDD4;
+  --sidebar-accent-foreground: #2C1810;
+  --sidebar-border: rgba(44, 24, 16, 0.15);
+  --sidebar-ring: #8B4513;
+}
+
+.dark {
+  /* Dark Mode Mid-Century Retro Color Palette - Improved Contrast */
+  --background: #1A1612;
+  --foreground: #FFFFFF;
+  --card: #2A241F;
+  --card-foreground: #FFFFFF;
+  --popover: #2A241F;
+  --popover-foreground: #FFFFFF;
+  --primary: #D2B48C;
+  --primary-foreground: #1A1612;
+  --secondary: #4A3A2E;
+  --secondary-foreground: #FFFFFF;
+  --muted: #3A2F24;
+  --muted-foreground: #D4C4B4;
+  --accent: #DAA520;
+  --accent-foreground: #1A1612;
+  --destructive: #DC143C;
+  --destructive-foreground: #FFFFFF;
+  --border: rgba(210, 180, 140, 0.2);
+  --input: transparent;
+  --input-background: #2A241F;
+  --switch-background: #4A3A2E;
+  --ring: #D2B48C;
+  
+  /* Dark Mode Custom Retro Design Tokens */
+  --wood-light: #4A3A2E;
+  --wood-primary: #3A2F24;
+  --wood-medium: #2A241F;
+  --wood-dark: #1F1B17;
+  --wood-darker: #151311;
+  
+  --cream: #2A241F;
+  --warm-white: #2A241F;
+  --brass: #DAA520;
+  --brass-dark: #B8860B;
+  --vinyl-black: #FFFFFF;
+  --vinyl-label: #DC143C;
+  
+  /* Dark Mode Shadows and Effects */
+  --shadow-soft: 0 4px 20px rgba(0, 0, 0, 0.3);
+  --shadow-medium: 0 8px 30px rgba(0, 0, 0, 0.4);
+  --shadow-strong: 0 15px 50px rgba(0, 0, 0, 0.5);
+  --shadow-vinyl: 0 8px 25px rgba(0, 0, 0, 0.6);
+  
+  --chart-1: #D2B48C;
+  --chart-2: #8B4513;
+  --chart-3: #DAA520;
+  --chart-4: #4A3A2E;
+  --chart-5: #B8A898;
+  --sidebar: #1A1612;
+  --sidebar-foreground: #F7F4F0;
+  --sidebar-primary: #D2B48C;
+  --sidebar-primary-foreground: #1A1612;
+  --sidebar-accent: #3A2F24;
+  --sidebar-accent-foreground: #F7F4F0;
+  --sidebar-border: rgba(210, 180, 140, 0.2);
+  --sidebar-ring: #D2B48C;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-input-background: var(--input-background);
+  --color-switch-background: var(--switch-background);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+}
+
+/* 🔥 CRITICAL RESPONSIVE FIX - ADD THIS */
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+    box-sizing: border-box; /* Force box-sizing everywhere */
+  }
+
+  html {
+    width: 100%;
+    overflow-x: hidden; /* Prevent horizontal scroll on root */
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    width: 100%;
+    overflow-x: hidden; /* Prevent horizontal scroll on body */
+    margin: 0;
+    padding: 0;
+    position: relative;
+  }
+  
+  /* Force all children to respect viewport width */
+  #root {
+    width: 100%;
+    overflow-x: hidden;
+    position: relative;
+  }
+}
+
+/**
+ * Base typography. This is not applied to elements which have an ancestor with a Tailwind text class.
+ */
+@layer base {
+  :where(:not(:has([class*=" text-"]), :not(:has([class^="text-"])))) {
+    h1 {
+      font-size: var(--text-2xl);
+      font-weight: var(--font-weight-medium);
+      line-height: 1.5;
+    }
+
+    h2 {
+      font-size: var(--text-xl);
+      font-weight: var(--font-weight-medium);
+      line-height: 1.5;
+    }
+
+    h3 {
+      font-size: var(--text-lg);
+      font-weight: var(--font-weight-medium);
+      line-height: 1.5;
+    }
+
+    h4 {
+      font-size: var(--text-base);
+      font-weight: var(--font-weight-medium);
+      line-height: 1.5;
+    }
+
+    p {
+      font-size: var(--text-base);
+      font-weight: var(--font-weight-normal);
+      line-height: 1.5;
+    }
+
+    label {
+      font-size: var(--text-base);
+      font-weight: var(--font-weight-medium);
+      line-height: 1.5;
+    }
+
+    button {
+      font-size: var(--text-base);
+      font-weight: var(--font-weight-medium);
+      line-height: 1.5;
+    }
+
+    input {
+      font-size: var(--text-base);
+      font-weight: var(--font-weight-normal);
+      line-height: 1.5;
+    }
+  }
+}
+
+html {
+  font-size: var(--font-size);
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+/* Typography Hierarchy */
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Playfair Display', serif;
+}
+
+/* Custom CSS Classes for Retro Effects */
+.vinyl-shadow {
+  box-shadow: var(--shadow-vinyl), inset 0 0 0 1px rgba(255, 255, 255, 0.1);
+}
+
+.wood-texture {
+  background: linear-gradient(135deg, var(--wood-light) 0%, var(--wood-primary) 50%, var(--wood-medium) 100%);
+  position: relative;
+}
+
+.wood-texture::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: 
+    repeating-linear-gradient(
+      90deg,
+      transparent,
+      transparent 2px,
+      rgba(139, 69, 19, 0.05) 2px,
+      rgba(139, 69, 19, 0.05) 4px
+    ),
+    repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 20px,
+      rgba(139, 69, 19, 0.03) 20px,
+      rgba(139, 69, 19, 0.03) 21px
+    );
+  pointer-events: none;
+}
+
+.retro-glow {
+  box-shadow: 
+    0 0 20px rgba(184, 134, 11, 0.3),
+    0 0 40px rgba(184, 134, 11, 0.2),
+    inset 0 0 0 1px rgba(184, 134, 11, 0.4);
+}
+
+.warm-gradient {
+  background: linear-gradient(135deg, var(--warm-white) 0%, var(--cream) 50%, var(--wood-light) 100%);
+}
+
+/* Dark mode enhancements */
+.dark .wood-texture {
+  background: linear-gradient(135deg, var(--wood-light) 0%, var(--wood-primary) 50%, var(--wood-medium) 100%);
+}
+
+.dark .wood-texture::before {
+  background: 
+    repeating-linear-gradient(
+      90deg,
+      transparent,
+      transparent 2px,
+      rgba(210, 180, 140, 0.08) 2px,
+      rgba(210, 180, 140, 0.08) 4px
+    ),
+    repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 20px,
+      rgba(210, 180, 140, 0.05) 20px,
+      rgba(210, 180, 140, 0.05) 21px
+    );
+}
+
+.dark .warm-gradient {
+  background: linear-gradient(135deg, var(--background) 0%, var(--muted) 50%, var(--wood-primary) 100%);
+}
+
+.dark .retro-glow {
+  box-shadow: 
+    0 0 20px rgba(218, 165, 32, 0.4),
+    0 0 40px rgba(218, 165, 32, 0.3),
+    inset 0 0 0 1px rgba(218, 165, 32, 0.5);
+}
+
+/* Accessibility Enhancements */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* Focus styles for better accessibility */
+:focus-visible {
+  outline: 2px solid var(--brass);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  :root {
+    --border: rgba(44, 24, 16, 0.3);
+    --muted-foreground: #4A3A2E;
+  }
+  
+}

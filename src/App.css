@@ -1,0 +1,68 @@
+body {
+  margin: 0;
+  font-family: sans-serif;
+  background: #222;
+  color: #fff;
+}
+
+.room {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1rem;
+}
+
+.room-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 1rem;
+  margin-top: 1rem;
+}
+
+.wall,
+.shelf {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  justify-content: center;
+}
+
+.wall-vinyl,
+.shelf-vinyl {
+  width: 80px;
+  height: 80px;
+  cursor: pointer;
+  border-radius: 50%;
+  object-fit: cover;
+  transition: transform 0.2s;
+}
+.wall-vinyl:hover,
+.shelf-vinyl:hover {
+  transform: scale(1.1);
+}
+
+.vinyl-player {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.rotating-vinyl {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  margin-bottom: 1rem;
+  animation: spin 6s linear infinite;
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+
+.mirror video {
+  width: 150px;
+  height: 150px;
+  border: 2px solid #fff;
+  border-radius: 10px;
+}
