@@ -8,7 +8,7 @@ const HERO_IMAGE =
   "https://res.cloudinary.com/dz6kxumoo/image/upload/v1771895356/Gemini_Generated_Image_xg2milxg2milxg2m_l8ek3e.png";
 
 const CV_URL =
-  "https://res.cloudinary.com/dz6kxumoo/image/upload/v1771903537/Name_-_CV_liv2vz.png";
+  "https://res.cloudinary.com/dz6kxumoo/image/upload/v1772043705/Name_-_CVV_pxqcfa.png";
 
 async function downloadCV(): Promise<void> {
   try {
