@@ -365,7 +365,7 @@ function ProjectCard({ project, index, inView }: ProjectCardProps) {
         initial={{ opacity: 0, y: 40 }}
         animate={inView ? { opacity: 1, y: 0 } : {}}
         transition={{ duration: 0.8, delay: index * 0.15, ease: [0.22, 1, 0.36, 1] }}
-        className="py-12 md:py-16"
+        className="py-12 md:py-16 relative"
         style={{ cursor: isComingSoon ? "default" : "pointer" }}
         onMouseEnter={() => !isComingSoon && setIsHovered(true)}
         onMouseLeave={() => setIsHovered(false)}
@@ -429,7 +429,7 @@ function ProjectCard({ project, index, inView }: ProjectCardProps) {
             )}
           </div>
 
-          {/* Image */}
+          {/* Image with Click Me button */}
           <div className={`relative overflow-hidden aspect-[4/3] ${isReversed ? 'lg:col-start-1 lg:row-start-1' : ''}`}>
             <motion.img
               src={project.thumb}
@@ -458,6 +458,54 @@ function ProjectCard({ project, index, inView }: ProjectCardProps) {
                 transition: "opacity 0.6s ease",
               }}
             />
+
+            {/* Click Me Button - Shows on mobile always, on desktop on hover */}
+            {!isComingSoon && (
+              <motion.div
+                initial={{ opacity: 0, scale: 0.8 }}
+                animate={{ 
+                  opacity: 1,
+                  scale: 1
+                }}
+                className="absolute inset-0 flex items-center justify-center pointer-events-none"
+              >
+                <motion.div
+                  animate={{
+                    opacity: isHovered ? 1 : 0,
+                    scale: isHovered ? 1 : 0.8,
+                  }}
+                  transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
+                  className="hidden md:flex items-center justify-center"
+                >
+                  <div
+                    className="font-body font-bold uppercase tracking-[0.25em] text-xs px-6 py-3 rounded-full backdrop-blur-md border-2"
+                    style={{
+                      backgroundColor: "rgba(0,0,0,0.7)",
+                      borderColor: "#f97316",
+                      color: "#f97316",
+                      boxShadow: "0 8px 30px rgba(249,115,22,0.4)",
+                    }}
+                  >
+                    Click to Explore →
+                  </div>
+                </motion.div>
+
+                {/* Mobile version - always visible */}
+                <div className="flex md:hidden items-center justify-center">
+                  <div
+                    className="font-body font-bold uppercase tracking-[0.25em] text-xs px-6 py-3 rounded-full backdrop-blur-md border-2"
+                    style={{
+                      backgroundColor: "rgba(0,0,0,0.7)",
+                      borderColor: "#f97316",
+                      color: "#f97316",
+                      boxShadow: "0 8px 30px rgba(249,115,22,0.4)",
+                    }}
+                  >
+                    Tap to Explore →
+                  </div>
+                </div>
+              </motion.div>
+            )}
           </div>
         </div>
       </motion.div>
@@ -469,7 +517,6 @@ function ProjectCard({ project, index, inView }: ProjectCardProps) {
     </div>
   );
 }
-
 // ─── MAIN EXPORT ──────────────────────────────────────────────────────────────
 
 export function Projects() {
