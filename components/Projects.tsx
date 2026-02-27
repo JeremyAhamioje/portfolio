@@ -78,17 +78,26 @@ const PROJECTS: ProjectType[] = [
   },
   {
     id: 2,
-    title: "COMING SOON",
-    subtitle: "IN DEVELOPMENT",
+    title: "RACK & PINION",
+    subtitle: "MECHANICAL TRANSMISSION SYSTEM",
     year: "2025",
     category: "Mechanical Design",
-    tags: ["SolidWorks"],
-    problem: "New project in development.",
-    solution: "Details coming soon.",
-    thumb: "https://res.cloudinary.com/dz6kxumoo/image/upload/v1772033858/download_7_sjo2r4.jpg",
-    exploded: "https://res.cloudinary.com/dz6kxumoo/image/upload/v1772033858/download_7_sjo2r4.jpg",
-    drawings: [],
-    specs: [],
+    tags: ["Fusion 360", "Parametric Modelling", "Assembly", "Technical Drawing"],
+    problem:
+      "Model the geometric relationship between rotational and linear motion in a rack and pinion transmission system — accurately representing spur gear tooth profiles, pitch alignment, and assembly constraints.",
+    solution:
+      "A fully constrained static assembly built in Fusion 360, with parametric spur gear (pinion) geometry, matching rack tooth profile, and precise pitch-line alignment ensuring theoretical meshing compatibility.",
+    thumb:
+      "https://res.cloudinary.com/dz6kxumoo/image/upload/v1772231788/User_Library-Rack_and_pinion123_2026-Feb-27_10-05-32PM-000_CustomizedView689394002_png_mao2y5.png",
+    exploded:
+      "https://res.cloudinary.com/dz6kxumoo/image/upload/v1772232694/Screenshot_2026-02-27_235010_ijk236.png",
+    video:
+      "https://res.cloudinary.com/dz6kxumoo/video/upload/v1772231760/User_Library-Rack_and_pinion123_vbkie2.mp4",
+    drawings: [
+      "https://res.cloudinary.com/dz6kxumoo/image/upload/v1772231752/User_Library-Rack_and_pinion123_Drawing_page-0001_b2ejua.jpg",
+      "https://res.cloudinary.com/dz6kxumoo/image/upload/v1772231752/User_Library-Rack_and_pinion123_Drawing_page-0002_bqfpgg.jpg",
+    ],
+    specs: ["Parametric Spur Gear", "Pitch-Line Alignment", "Component Assembly", "Static Geometric Model"],
   },
   {
     id: 3,
@@ -130,7 +139,7 @@ function Lightbox({ images, startIdx, onClose }: LightboxProps) {
       >
         <button
           onClick={onClose}
-          className= "btn-hero absolute -top-12 right-0 text-white/40 hover:text-white transition-colors text-2xl font-light"
+          className="btn-hero absolute -top-12 right-0 text-white/40 hover:text-white transition-colors text-2xl font-light"
         >
           ✕ close
         </button>
@@ -145,7 +154,7 @@ function Lightbox({ images, startIdx, onClose }: LightboxProps) {
         <div className="flex items-center justify-between mt-5">
           <button
             onClick={() => setIdx((i) => (i - 1 + images.length) % images.length)}
-            className=" btn-herofont-condensed text-white/40 hover:text-white text-sm uppercase tracking-widest transition-colors"
+            className="btn-hero font-condensed text-white/40 hover:text-white text-sm uppercase tracking-widest transition-colors"
           >
             ← Prev
           </button>
@@ -154,7 +163,7 @@ function Lightbox({ images, startIdx, onClose }: LightboxProps) {
           </span>
           <button
             onClick={() => setIdx((i) => (i + 1) % images.length)}
-            className="btn-herofont-condensed text-white/40 hover:text-white text-sm uppercase tracking-widest transition-colors"
+            className="btn-hero font-condensed text-white/40 hover:text-white text-sm uppercase tracking-widest transition-colors"
           >
             Next →
           </button>
