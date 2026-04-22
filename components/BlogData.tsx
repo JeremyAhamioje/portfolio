@@ -23,7 +23,7 @@ export type BlogPost = {
 };
  
 const HYDRO_IMAGES = {
-  cover:   "https://res.cloudinary.com/dz6kxumoo/image/upload/v1776823079/WhatsApp_Image_2026-04-22_at_2.52.29_AM_fzju9a.jpg",
+  cover:  "https://res.cloudinary.com/dz6kxumoo/image/upload/v1776823079/WhatsApp_Image_2026-04-22_at_2.52.29_AM_fzju9a.jpg",
   img1:    "https://res.cloudinary.com/dz6kxumoo/image/upload/v1776823079/WhatsApp_Image_2026-04-22_at_2.51.53_AM_3_vwzsqf.jpg",
   img2:    "https://res.cloudinary.com/dz6kxumoo/image/upload/v1776823078/WhatsApp_Image_2026-04-22_at_2.51.53_AM_vlxyci.jpg",
   img3:    "https://res.cloudinary.com/dz6kxumoo/image/upload/v1776823078/WhatsApp_Image_2026-04-22_at_2.51.34_AM_qzvxtz.jpg",
