@@ -1,5 +1,4 @@
 import { BLOG_POSTS } from "./blogData";
-// blogData.ts must be in src/components/ alongside this file
  
 type BlogListProps = {
   onSelectPost: (slug: string) => void;

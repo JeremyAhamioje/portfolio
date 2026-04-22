@@ -55,7 +55,7 @@ export const BLOG_POSTS: BlogPost[] = [
     steps: [
       {
         title: "Introduction",
-        body: `Hydroponics is a method of growing plants without soil, using mineral nutrient solutions in a water solvent. It allows for more efficient water usage, faster plant growth, and year-round cultivation in controlled environments.\n\nThe goal of this project was to build a low-cost automated hydroponic system using off-the-shelf components and an Arduino microcontroller — making soil-less farming accessible without expensive commercial solutions.\n\nThe system automates water distribution using servo-controlled valves and a DC pump, timed and sequenced by Arduino logic. Power is managed through a 6V lead-acid battery with an LM2596 step-down module to provide clean, regulated voltage to sensitive components.`,
+        body: `Hydroponics is a method of growing plants without soil, using mineral nutrient solutions in a water solvent. It allows for more efficient water usage, faster plant growth, and year-round cultivation in controlled environments.\n\nThe goal of this project was to build a low-cost automated hydroponic system using off-the-shelf components and an Arduino microcontroller — making soil-less farming accessible without expensive commercial solutions.\n\nThe system automates water distribution using servo-controlled valves and a DC pump, timed and sequenced by Arduino logic. Power is managed through a 12V l-ion battery with an LM2596 step-down module to provide clean, regulated voltage to sensitive components.`,
         images: [HYDRO_IMAGES.cover, HYDRO_IMAGES.img1],
       },
       {
