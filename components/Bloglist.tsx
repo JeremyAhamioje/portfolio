@@ -1,4 +1,4 @@
-import { BLOG_POSTS } from "./Blogdata";
+import { BLOG_POSTS } from "./BlogData";
  
 type BlogListProps = {
   onSelectPost: (slug: string) => void;

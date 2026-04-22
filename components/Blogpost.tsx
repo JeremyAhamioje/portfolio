@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { BLOG_POSTS } from "./Blogdata";
+import { BLOG_POSTS } from "./BlogData";
  
 type BlogPostProps = {
   slug: string;
