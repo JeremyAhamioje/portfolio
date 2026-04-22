@@ -1,8 +1,7 @@
 "use client";
 
 import * as React from "react";
-import { ChevronLeft, ChevronRight } from "lucide-react@0.487.0";
-import { DayPicker } from "react-day-picker@8.10.1";
+import { DayPicker } from "react-day-picker";
 
 import { cn } from "./utils";
 import { buttonVariants } from "./button";
@@ -12,7 +11,12 @@ function Calendar({
   classNames,
   showOutsideDays = true,
   ...props
-}: React.ComponentProps<typeof DayPicker>) {
+}: React.ComponentProps<typeof DayPicker> & {
+  components?: {
+    IconLeft?: React.ComponentType<{ className?: string; [key: string]: any }>;
+    IconRight?: React.ComponentType<{ className?: string; [key: string]: any }>;
+  };
+}) {
   return (
     <DayPicker
       showOutsideDays={showOutsideDays}
@@ -27,8 +31,14 @@ function Calendar({
           buttonVariants({ variant: "outline" }),
           "size-7 bg-transparent p-0 opacity-50 hover:opacity-100",
         ),
-        nav_button_previous: "absolute left-1",
-        nav_button_next: "absolute right-1",
+        nav_button_previous: cn(
+          "absolute left-1 flex items-center justify-center",
+          classNames?.nav_button_previous
+        ),
+        nav_button_next: cn(
+          "absolute right-1 flex items-center justify-center",
+          classNames?.nav_button_next
+        ),
         table: "w-full border-collapse space-x-1",
         head_row: "flex",
         head_cell:
@@ -58,14 +68,6 @@ function Calendar({
           "aria-selected:bg-accent aria-selected:text-accent-foreground",
         day_hidden: "invisible",
         ...classNames,
-      }}
-      components={{
-        IconLeft: ({ className, ...props }) => (
-          <ChevronLeft className={cn("size-4", className)} {...props} />
-        ),
-        IconRight: ({ className, ...props }) => (
-          <ChevronRight className={cn("size-4", className)} {...props} />
-        ),
       }}
       {...props}
     />
