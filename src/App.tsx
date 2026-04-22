@@ -1,11 +1,11 @@
 import { useEffect, useState } from "react";
-import { HeroCarousel } from "../components/HeroCarousel";
-import { About }        from "../components/About";
-import { Projects }     from "../components/Projects";
-import { Skills }       from "../components/Skills";
-import { Footer }       from "../components/Footer";
-import { BlogList }     from "../components/BlogList";
-import { BlogPost }     from "../components/BlogPost";
+import { HeroCarousel } from "./components/HeroCarousel";
+import { About } from "./components/About";
+import { Projects } from "./components/Projects";
+import { Skills } from "./components/Skills";
+import { Footer } from "./components/Footer";
+import { BlogList } from "./components/BlogList";
+import { BlogPost } from "./components/BlogPost";
  
 // ─── Simple in-app router (no react-router needed) ───────────────────────────
 type Page =
