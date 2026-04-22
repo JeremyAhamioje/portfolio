@@ -44,7 +44,7 @@ export const BLOG_POSTS: BlogPost[] = [
     id: "1",
     slug: "hydroponic-system-build",
     title: "Building a Low-Cost Automated Hydroponic System",
-    subtitle: "Soil-less farming powered by Arduino, servo motors, and a 6V battery",
+    subtitle: "Soil-less farming powered by Arduino, servo motors, and a 12V battery",
     category: "Electronics & Automation",
     date: "April 2026",
     readTime: "12 min read",
