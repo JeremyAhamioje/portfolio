@@ -1,4 +1,5 @@
-import { BLOG_POSTS } from "./BlogData";
+import { BLOG_POSTS } from "./blogData";
+// blogData.ts must be in src/components/ alongside this file
  
 type BlogListProps = {
   onSelectPost: (slug: string) => void;
@@ -128,3 +129,4 @@ export function BlogList({ onSelectPost, onBack }: BlogListProps) {
     </>
   );
 }
+ 
