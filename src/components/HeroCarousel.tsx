@@ -254,7 +254,7 @@ export function HeroCarousel({ onNavigateBlog }: HeroCarouselProps) {
                   SYSTEM
                 </div>
                 <p className="hc-body" style={{color:"rgba(255,255,255,0.55)",fontSize:"clamp(0.8rem,1.2vw,1rem)",lineHeight:1.7,maxWidth:"420px",marginBottom:"32px"}}>
-                  A fully automated soil-less farming system built from scratch — Arduino-controlled servo valves, a regulated 6V power system, and a DC pump driving two irrigation channels.
+                  A fully automated soil-less farming system built from scratch — Arduino-controlled servo valves, a regulated 12V power system, and a DC pump driving two irrigation channels.
                 </p>
                 <div style={{display:"flex",gap:"12px",flexWrap:"wrap"}}>
                   {["Arduino","Automation","Electronics","Hydroponics"].map(t => (
